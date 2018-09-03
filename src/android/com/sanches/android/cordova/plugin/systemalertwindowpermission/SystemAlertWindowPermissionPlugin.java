@@ -1,4 +1,4 @@
-package com.wryel.android.cordova.plugin.systemalertwindowpermission;
+package com.sanches.android.cordova.plugin.systemalertwindowpermission;
 
 import android.content.Intent;
 import android.net.Uri;
