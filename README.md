@@ -1,4 +1,4 @@
-# cordova-plugin-system-alert-window-permission
+# cordova-plugin-system-overlapping
 ### How to use
 
 ```

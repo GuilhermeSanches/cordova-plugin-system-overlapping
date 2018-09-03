@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin
     xmlns="http://www.phonegap.com/ns/plugins/1.0"
-    id="cordova-plugin-system-alert-window-permission"
+    id="cordova-plugin-system-overlapping"
     version="0.0.1">
 
     <name>SystemAlertWindowPermissionPlugin</name>
@@ -25,10 +25,18 @@
         </config-file>
 
         <config-file target="AndroidManifest.xml" parent="/*">
-            <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+            <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />           
         </config-file>
 
+         <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <service
+                android:name="com.wryel.android.cordova.plugin.systemalertwindowpermission.SystemAlertWindowService"
+                android:enabled="true"
+                android:exported="false" />
+         </config-file>
+
         <source-file src="src/android/com/wryel/android/cordova/plugin/systemalertwindowpermission/SystemAlertWindowPermissionPlugin.java" target-dir="src/com/wryel/android/cordova/plugin/systemalertwindowpermission/" />
+        <source-file src="src/android/com/wryel/android/cordova/plugin/systemalertwindowpermission/SystemAlertWindowService.java" target-dir="src/com/wryel/android/cordova/plugin/systemalertwindowpermission/" />
 
     </platform>
 

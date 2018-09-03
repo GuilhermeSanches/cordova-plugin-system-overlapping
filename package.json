@@ -1,0 +1,31 @@
+{
+  "name": "cordova-plugin-system-overlapping",
+  "version": "1.0.0",
+  "description": "plugin to request overlay apps",
+  "cordova": {
+    "id": "cordova-plugin-system-overlapping",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guilhermesanches/cordova-plugin-system-overlapping.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.4.0"
+    }
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guilhermesanches/cordova-plugin-system-overlapping/issues"
+  },
+  "homepage": "https://github.com/guilhermesanches/cordova-plugin-system-overlapping#readme"
+}

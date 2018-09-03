@@ -9,5 +9,8 @@ module.exports = {
     },
     requestPermission: function(successCallback, errorCallback) {
         cordova.exec(successCallback, errorCallback, systemAlertWindowPermissionName, "requestPermission", []);
+    },
+    showNewOrder: function(successCallback, errorCallback) {
+           cordova.exec(successCallback, errorCallback, systemAlertWindowPermissionName, "showNewOrder", []);
     }
 };
