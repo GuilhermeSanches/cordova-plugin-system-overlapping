@@ -1,5 +1,6 @@
 package com.sanches.android.cordova.plugin.systemalertwindowpermission;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -11,6 +12,8 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import io.ionic.starter.MainActivity;
+
 public class SystemAlertWindowPermissionPlugin extends CordovaPlugin {
 
     private CallbackContext callbackContext = null;
@@ -20,6 +23,8 @@ public class SystemAlertWindowPermissionPlugin extends CordovaPlugin {
     public static final String ACTION_HAS_PERMISSION = "hasPermission";
 
     public static final String ACTION_REQUEST_PERMISSION = "requestPermission";
+
+    public static final String ACTION_SHOW_ORDER_PERMISSION = "showNewOrder";
 
     /* return values */
 
@@ -57,6 +62,15 @@ public class SystemAlertWindowPermissionPlugin extends CordovaPlugin {
                 }
             });
 
+        } else if (ACTION_SHOW_ORDER_PERMISSION.equals(action)) {
+
+            cordova.getThreadPool().execute(new Runnable() {
+                public void run() {
+                    SystemAlertWindowPermissionPlugin.this.callbackContext = callbackContext;
+                    showNewOrder();
+                }
+            });
+
         } else {
 
             cordova.getThreadPool().execute(new Runnable() {
@@ -70,6 +84,11 @@ public class SystemAlertWindowPermissionPlugin extends CordovaPlugin {
         }
 
         return success;
+    }
+
+    protected void showNewOrder() {
+        Activity context = cordova.getActivity();
+        context.startService(new Intent(MainActivity.this, SystemAlertWindowService.class));
     }
 
     protected int hasPermission() {
