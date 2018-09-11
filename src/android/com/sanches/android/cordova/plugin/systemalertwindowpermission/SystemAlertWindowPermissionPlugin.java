@@ -88,7 +88,7 @@ public class SystemAlertWindowPermissionPlugin extends CordovaPlugin {
 
     protected void showNewOrder() {
         Activity context = cordova.getActivity();
-        context.startService(new Intent(MainActivity.this, SystemAlertWindowService.class));
+        context.startService(new Intent(context, SystemAlertWindowService.class));
     }
 
     protected int hasPermission() {
