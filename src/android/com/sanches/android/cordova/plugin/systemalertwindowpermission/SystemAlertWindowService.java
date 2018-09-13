@@ -29,7 +29,7 @@ public class SystemAlertWindowService extends Service implements View.OnClickLis
         super.onCreate();
         mp = MediaPlayer.create(this, R.raw.song);
         if(mp != null) mp.setLooping(false);
-        if(mp !- null) mp.start();
+        if(mp != null) mp.start();
 
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
