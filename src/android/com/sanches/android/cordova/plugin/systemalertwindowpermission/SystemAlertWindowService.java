@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
-import io.ionic.starter.MainActivity;
-import io.ionic.starter.R;
+import com.facily.deliverers.MainActivity;
+import com.facily.deliverers.R;
 
 public class SystemAlertWindowService extends Service implements View.OnClickListener {
 

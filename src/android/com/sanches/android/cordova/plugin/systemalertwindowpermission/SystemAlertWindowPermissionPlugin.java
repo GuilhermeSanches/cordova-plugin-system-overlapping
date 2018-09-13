@@ -12,7 +12,7 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import io.ionic.starter.MainActivity;
+import com.facily.deliverers.MainActivity;
 
 public class SystemAlertWindowPermissionPlugin extends CordovaPlugin {
 
