@@ -28,7 +28,8 @@ public class SystemAlertWindowService extends Service implements View.OnClickLis
 
         super.onCreate();
         mp = MediaPlayer.create(this, R.raw.song);
-        mp.setLooping(false);
+        if(mp != null) mp.setLooping(false);
+        if(mp !- null) mp.start();
 
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
@@ -47,7 +48,7 @@ public class SystemAlertWindowService extends Service implements View.OnClickLis
         params.y = 100;
 
         windowManager.addView(chatHead, params);
-        mp.start();
+       
     }
 
     private void implementClickListeners() {
