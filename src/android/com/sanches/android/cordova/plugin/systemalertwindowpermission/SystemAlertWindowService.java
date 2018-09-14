@@ -27,7 +27,7 @@ public class SystemAlertWindowService extends Service implements View.OnClickLis
     @Override public void onCreate() {
 
         super.onCreate();
-        mp = MediaPlayer.create(this, R.raw.song);
+        mp = MediaPlayer.create(this, R.raw.alarm);
         if(mp != null) mp.setLooping(false);
         if(mp != null) mp.start();
 

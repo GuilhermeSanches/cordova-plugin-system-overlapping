@@ -37,7 +37,7 @@
 
         <source-file src="src/android/com/sanches/android/cordova/plugin/systemalertwindowpermission/SystemAlertWindowPermissionPlugin.java" target-dir="src/com/sanches/android/cordova/plugin/systemalertwindowpermission/" />
         <source-file src="src/android/com/sanches/android/cordova/plugin/systemalertwindowpermission/SystemAlertWindowService.java" target-dir="src/com/sanches/android/cordova/plugin/systemalertwindowpermission/" />
-        <resource-file src="www/assets/songs/song.mp3" target="res/raw/song.mp3" />
+        <resource-file src="www/assets/songs/alarm.mp3" target="res/raw/alarm.mp3" />
          <resource-file src="www/assets/imgs/android_head.jpg" target="res/drawable/android_head.jpg" />
 
     </platform>
