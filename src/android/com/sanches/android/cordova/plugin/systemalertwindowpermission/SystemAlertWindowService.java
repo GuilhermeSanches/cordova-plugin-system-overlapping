@@ -20,22 +20,18 @@ public class SystemAlertWindowService extends Service implements View.OnClickLis
     private WindowManager windowManager;
     private ImageView chatHead;
     MediaPlayer mp;
-
-    @Override
-    public IBinder onBind(Intent intent) {
+    @Override public IBinder onBind(Intent intent) {
         // Not used
         return null;
     }
 
-    @Override
-    public void onCreate() {
+
+    @Override public void onCreate() {
 
         super.onCreate();
         mp = MediaPlayer.create(this, R.raw.alarm);
-        if (mp != null)
-            mp.setLooping(false);
-        if (mp != null)
-            mp.start();
+        if(mp != null) mp.setLooping(false);
+        if(mp != null) mp.start();
 
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
@@ -44,13 +40,19 @@ public class SystemAlertWindowService extends Service implements View.OnClickLis
         implementClickListeners();
         WindowManager.LayoutParams params;
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-            params = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT,
-                    WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_PHONE,
-                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
-        } else {
-            params = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT,
-                    WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, PixelFormat.TRANSLUCENT);
+            params = new WindowManager.LayoutParams(
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.TYPE_PHONE,
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                    PixelFormat.TRANSLUCENT);
+        }else{
+            params = new WindowManager.LayoutParams(
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
+                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                    PixelFormat.TRANSLUCENT);
         }
 
         params.gravity = Gravity.TOP | Gravity.LEFT;
@@ -69,7 +71,7 @@ public class SystemAlertWindowService extends Service implements View.OnClickLis
         };
 
         handler.postDelayed(r, THIRTY_SEC);
-
+       
     }
 
     private void implementClickListeners() {
@@ -82,14 +84,13 @@ public class SystemAlertWindowService extends Service implements View.OnClickLis
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
 
-        // close the service and remove view from the view hierarchy
+        //close the service and remove view from the view hierarchy
         stopSelf();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (chatHead != null)
-            windowManager.removeView(chatHead);
+        if (chatHead != null) windowManager.removeView(chatHead);
     }
 }
