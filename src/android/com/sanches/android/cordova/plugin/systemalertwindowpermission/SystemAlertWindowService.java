@@ -66,7 +66,11 @@ public class SystemAlertWindowService extends Service implements View.OnClickLis
 
         final Runnable r = new Runnable() {
             public void run() {
-                windowManager.removeViewImmediate(chatHead);
+                try {
+                    windowManager.removeViewImmediate(chatHead);
+                }catch (IllegalArgumentException ex){
+                    //DO Nothing
+                }
             }
         };
 
